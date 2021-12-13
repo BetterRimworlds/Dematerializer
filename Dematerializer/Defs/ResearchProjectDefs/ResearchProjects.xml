@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ResearchProjectDef>
+        <defName>Building_Dematerializer_research</defName>
+        <label>Dematerialization</label>
+        <description>Eureka! Your scientists have discovered how to store (and restore!) discrete matter into temporary subspace bubbles.</description>
+        <baseCost>10000</baseCost>
+        <techLevel>Spacer</techLevel>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <prerequisites>
+            <li>AdvancedFabrication</li>
+            <li>ShipBasics</li>
+        </prerequisites>
+    </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Dematerializer</name>
+    <supportedVersions>
+        <li>1.2</li>
+    </supportedVersions>
+    <author>HopeSeekr</author>
+    <url>https://github.com/BetterRimworlds/Dematerializer/</url>
+    <description>Version 6
+The BetterRimworlds Dematerializer enables you to dematerialize materials and pawns (both friendly and hostile!) from
+anywhere on the map into a temporary subspace bubble that will persist as long as their is a persistent flow of energy
+to the subspace capacitors.
+
+**ALERT: The Dematerializer has *harsh* consequences for all higher lifeforms on the map in the case of power failure!**
+    </description>
+</ModMetaData>

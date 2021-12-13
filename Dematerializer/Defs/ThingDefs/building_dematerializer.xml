@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Name="BuildingBase" Abstract="True">
+        <category>Building</category>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <selectable>true</selectable>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <ThingDef Class="BetterRimworlds.Dematerializer.DematerializerThingDef" ParentName="BuildingBase">
+        <defName>Dematerializer</defName>
+        <label>Dematerializer</label>
+        <thingClass>BetterRimworlds.Dematerializer.Building_Dematerializer</thingClass>
+        <graphicData>
+            <texPath>Things/Buildings/Dematerializer</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,3)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>Impassable</passability>
+        <castEdgeShadows>true</castEdgeShadows>
+        <fillPercent>1</fillPercent>
+        <specialDisplayRadius>3</specialDisplayRadius>
+        <tickerType>Rare</tickerType>
+        <FileLocationPrimary></FileLocationPrimary>
+        <FileLocationSecondary></FileLocationSecondary>
+        <statBases>
+            <WorkToBuild>30000</WorkToBuild>
+            <MaxHitPoints>1000000</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+        </statBases>
+        <description>Dematerializer</description>
+        <researchPrerequisites>
+            <li>Building_Dematerializer_research</li>
+        </researchPrerequisites>
+        <building>
+            <wantsHopperAdjacent>true</wantsHopperAdjacent>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>false</shortCircuitInRain>
+                <basePowerConsumption>1600</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+        </comps>
+        <size>(3,3)</size>
+        <costList>
+            <Steel>2000</Steel>
+            <Uranium>500</Uranium>
+            <Plasteel>2000</Plasteel>
+            <Gold>2000</Gold>
+            <AIPersonaCore>1</AIPersonaCore>
+            <ComponentIndustrial>5</ComponentIndustrial>
+            <ComponentSpacer>25</ComponentSpacer>
+        </costList>
+        <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+        <hasInteractionCell>False</hasInteractionCell>
+        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+        <designationCategory>Misc</designationCategory>
+        <staticSunShadowHeight>0.75</staticSunShadowHeight>
+        <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+        <placeWorkers>
+            <li>BetterRimworlds.Dematerializer.Placeworker_OnlyOneDematerializer</li>
+        </placeWorkers>
+    </ThingDef>
+</Defs>
