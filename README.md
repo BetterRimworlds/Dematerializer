@@ -1,85 +1,35 @@
-# Rimworld Stargate
-WARNING: This mod uses the Rimworld Base Save Functionality in ways that it was never designed to support, 
-mainly saving specific things into a separate file instead of saving everything on the map to one file at 
-once. Because of this there may be adverse effects. The main one that I have found is that after traveling 
-through the Stargate Social opinions relating to that colonist will be lost, they will effectively be 
-meeting everyone for the first time again. At this time I do not know of a practical way to resolve this issue.
+# Rimworld Dematerializer
 
-The Stargate system allows you to transport materials over the great distances between colonies.
+The Dematerializer building allows you to teleport materials and pawns on the current map directly into the 
+Dematerializer buffer, where the items and pawns will remain in suspended animation indefinitely, as long
+as there is power in the subspace capacitors.
+
+Every 1 kg stored in the buffer requires 1 kW of energy to maintain. On power loss, the least massive items
+will be lost to subspace until power is restored.
+
+When solar storms occur, the Dematerializer is fully powered by the solar wind.
 
 ## Change Log
 
-01.00.00
+**v1.0.0: 2024-03-09**
 * Initial Release
-
-01.00.01
-* Fixing crash when loading with Stargates that locally have things in the Buffer.
-
-02.00.00
-* Alpha 14 Update
-
-02.00.01
-* Fix for potentially not loading Graphical Resources on loading a saved game.
-
-02.00.02
-* Building against 1249
-
-02.00.03
-* Alpha 15 Update (only had to change the supported version number)
-
-02.00.04
-* Alpha 16 Update (lots of small compatibility changes, esp regarding multiple maps).
-
-03.00.00
-* Alpha 16: Reworked the Offworld Gate so that when it's activated, all higher 
-  lifeforms on the map are damaged by a huge psionic blast.
-
---------------------------------------------------------------------------------------
-
-04.00.00
-* Officially forked from jaxxa/ED-Stargate.
-
-04.01.00
-* Alpha 17 Update (v0.17.1557)
-
-04.02.00
-* Beta 18 Update (v0.18.1722)
-
-04.03.00
-* Beta 19 Update (v0.19.2009)
-
-04.04.00
-* v1.0 Update (v1.0.2559)
-* Fixed the "inspect string for * contains empty lines" console error.
-* Fixed all of the "can't assign items to a faction" error messages.
-* Fixed the bug since B19 where colonists went *crazy* if they had ever been drafted.
-
-05.00.00
-* Made the Stargate research much more difficult to achieve.
-* The Off-world Gate will no longer allow outgoing travel.
-* The Off-world Gate now falls into ruin upon the first off-world recall.
-* The cost for constructing the Stargate has been greatly, and appropriately, increased.
-* Only one Off-world Gate is allowed per area.
-* Lots of code cleanup.
-
-06.00.00
-* Upgraded to C# v8.0.
-* Disorient, sicken or kill nearly every pawn on the map after activating an Transdimensional Stargate.
-* [Fixed] Fixed Humans being afflicted with Wormhole Insanity Disorder.
-* Created a new StargateBuffer to hold Things in Rimworld v1.0 fashion.
-* Stop drawing power if the circuits are full.
-* Added a Stargate Network system.
-* Added Teleportation between on-world gates.
-* Changes necessary for Rimworld v1.2.
-* Made Stargates substantially more expensive to build.
-* [Fixed] Colonists' max-XP-per-day now resets after jumping through a gate.
-* You can now view the contents of the Stargate's outgoing buffer!
-* Limit the number of item sets held in the stargate buffer to 500.
-
 
 ## Contributors
 
-This mod is forked off of the incredible engineering work by Jaxxa in his [**ED-Stargate mod**](https://github.com/jaxxa/ED-Stargate).
-I asked him for years to port this to A16, but then I learned C# and ported it myself ;-)
+This mod is forked off of the incredible [**Stargate mod**](https://github.com/BetterRimworlds/Stargate).
 
-Then I made it even better!
+# Contributors
+
+[Theodore R. Smith](https://github.com/hopeseekr/]) <hopeseekr@gmail.com>  
+GPG Fingerprint: D8EA 6E4D 5952 159D 7759  2BB4 EEB6 CE72 F441 EC41
+WhatsApp / Signal: +1 832-303-9477
+
+## License
+
+**CC-BY-ND-4.0**
+Creative Commons NoDerivations v4.0: Please see the [license file](LICENSE.md) for more information.
+
+**YOU MAY FORK THIS PROJECT.**
+
+**YOU MAY NOT PUBLISH ANY DERIVATION of this project to either your own website or a third-party host.**
+

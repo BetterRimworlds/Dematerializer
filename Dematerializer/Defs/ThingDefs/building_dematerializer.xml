@@ -42,7 +42,7 @@
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>false</shortCircuitInRain>
-                <basePowerConsumption>1600</basePowerConsumption>
+<!--                <basePowerConsumption>1600</basePowerConsumption>-->
             </li>
             <li Class="CompProperties_Flickable"/>
         </comps>
@@ -65,5 +65,8 @@
         <placeWorkers>
             <li>BetterRimworlds.Dematerializer.Placeworker_OnlyOneDematerializer</li>
         </placeWorkers>
+        <inspectorTabs>
+            <li>BetterRimworlds.Dematerializer.ITab_DematerializerBuffer</li><!--Contents tab: Good call, sumghai-->
+        </inspectorTabs>
     </ThingDef>
 </Defs>
