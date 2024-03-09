@@ -171,11 +171,20 @@ namespace BetterRimworlds.Dematerializer
 
             if (this.fullyCharged == true)
             {
-                float excessPower = this.power.PowerNet.CurrentEnergyGainRate() / CompPower.WattsToWattDaysPerTick;
                 bool hasNoPower = this.power.PowerNet == null || !this.power.PowerNet.HasActivePowerSource;
-                bool hasInsufficientPower = excessPower < this.power.powerOutputInt * -1.0f;
+                bool hasInsufficientPower = this.power.PowerOn == false;
                 if (hasNoPower || hasInsufficientPower)
                 {
+                    // if (hasNoPower)
+                    // {
+                    //     Log.Error("NO POWER");
+                    // }
+                    //
+                    // if (hasInsufficientPower)
+                    // {
+                    //     Log.Error("INSUFFICIENT POWER");
+                    // }
+
                     // Ignore power requirements during a solar flare.
                     bool isSolarFlare = this.currentMap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
                     if (isSolarFlare)
