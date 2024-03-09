@@ -141,6 +141,14 @@ namespace BetterRimworlds.Dematerializer
 
         public override void TickRare()
         {
+            var foundTeleportArea = Find.CurrentMap.areaManager.GetLabeled("Teleport Field");
+            if (foundTeleportArea is null)
+            {
+                this.teleportArea.Delete();
+                this.teleportArea = new Area_Allowed(this.currentMap.areaManager, "Teleport Field");
+                Find.CurrentMap.areaManager.AllAreas.Add(this.teleportArea);
+            }
+
             if (!this.dematerializedBuffer.Any())
             {
                 if (this.fullyCharged == true)
@@ -200,7 +208,7 @@ namespace BetterRimworlds.Dematerializer
                 {
                     this.dematerializedBuffer.Init();
                     this.isPowerInited = true;
-                    this.power.PowerOutput = -10000;
+                    this.power.PowerOutput = -1000;
                 }
 
                 // Auto-add stuff if it's inside the Stargate area.
@@ -313,12 +321,17 @@ namespace BetterRimworlds.Dematerializer
                             this.dematerializedBuffer.TryAdd(currentPawn);
                         }
                     }
+
+                    // Tell the MapDrawer that here is something thats changed
+                    Find.CurrentMap.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things, true, false);
+
+                    this.teleportArea.Delete();
+                    this.teleportArea = new Area_Allowed(this.currentMap.areaManager, "Teleport Field");
+                    Find.CurrentMap.areaManager.AllAreas.Add(this.teleportArea);
                 }
 
-                // Tell the MapDrawer that here is something thats changed
-                Find.CurrentMap.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things, true, false);
                 //this.teleportArea = new Area_Allowed(this.currentMap.areaManager, "Teleport Field");
-                this.teleportArea.Delete();
+                //this.teleportArea.areaManager.AllAreas.Clear();
                 // Find.CurrentMap.areaManager.AllAreas.Add(this.teleportArea);
             }
             else
