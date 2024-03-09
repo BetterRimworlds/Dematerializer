@@ -248,7 +248,7 @@ namespace BetterRimworlds.Dematerializer
                 yield return act;
             }
 
-            if (true)
+            if (DefDatabase<ResearchProjectDef>.GetNamed("BRW_QuantumTeleportation").IsFinished)
             {
                 Command_Action act = new Command_Action();
                 //act.action = () => Designator_Deconstruct.DesignateDeconstruct(this);

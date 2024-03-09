@@ -26,6 +26,8 @@ This tech enables the Dematerializer tech, if you have that mod.</description>
         <label>Quantum Teleportation</label>
         <description>"Beam me up, Scotty!"
 
+Now the Dematerializer can rematerialize Pawns and Items stored in its buffer. 
+
 This tech enables the Archotech Teleporter tech, if you have that mod.</description>
         <baseCost>6000</baseCost>
         <techLevel>Spacer</techLevel>
@@ -47,7 +49,7 @@ This tech enables the Archotech Teleporter tech, if you have that mod.</descript
         <baseCost>10000</baseCost>
         <techLevel>Spacer</techLevel>
         <researchViewX>1</researchViewX>
-        <researchViewY>0</researchViewY>
+        <researchViewY>1</researchViewY>
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
