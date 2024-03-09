@@ -4,7 +4,7 @@ The Dematerializer building allows you to teleport materials and pawns on the cu
 Dematerializer buffer, where the items and pawns will remain in suspended animation indefinitely, as long
 as there is power in the subspace capacitors.
 
-Every 1 kg stored in the buffer requires 1 kW of energy to maintain. On power loss, the least massive items
+Every 1 kg stored in the buffer requires 2 kW of energy to maintain. On power loss, the least massive items
 will be lost to subspace until power is restored.
 
 When solar storms occur, the Dematerializer is fully powered by the solar wind.
