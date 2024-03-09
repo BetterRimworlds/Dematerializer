@@ -1,5 +1,7 @@
 # Rimworld Dematerializer
 
+![DeMaterializer](https://raw.githubusercontent.com/BetterRimworlds/Dematerializer/trunk/Dematerializer/About/Preview.png)
+
 The Dematerializer building allows you to teleport materials and pawns on the current map directly into the 
 Dematerializer buffer, where the items and pawns will remain in suspended animation indefinitely, as long
 as there is power in the subspace capacitors.
