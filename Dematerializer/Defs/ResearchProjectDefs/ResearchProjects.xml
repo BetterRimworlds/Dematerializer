@@ -40,4 +40,22 @@ This tech enables the Archotech Teleporter tech, if you have that mod.</descript
         </prerequisites>
         <tab>Stargate</tab>
     </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>Building_Dematerializer_research</defName>
+        <label>Dematerialization</label>
+        <description>Eureka! Your scientists have discovered how to store (and restore!) discrete matter into temporary subspace bubbles.</description>
+        <baseCost>10000</baseCost>
+        <techLevel>Spacer</techLevel>
+        <researchViewX>1</researchViewX>
+        <researchViewY>0</researchViewY>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <prerequisites>
+            <li>AdvancedFabrication</li>
+            <li>ShipBasics</li>
+            <li>BRW_QuantumStorage</li>
+        </prerequisites>
+        <tab>Stargate</tab>
+    </ResearchProjectDef>
 </Defs>

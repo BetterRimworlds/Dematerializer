@@ -27,7 +27,7 @@
         <FileLocationPrimary></FileLocationPrimary>
         <FileLocationSecondary></FileLocationSecondary>
         <statBases>
-            <WorkToBuild>30000</WorkToBuild>
+            <WorkToBuild>20000</WorkToBuild>
             <MaxHitPoints>1000000</MaxHitPoints>
             <Flammability>0.0</Flammability>
         </statBases>
@@ -55,6 +55,7 @@
             <AIPersonaCore>1</AIPersonaCore>
             <ComponentIndustrial>5</ComponentIndustrial>
             <ComponentSpacer>25</ComponentSpacer>
+            <Luciferium>100</Luciferium>
         </costList>
         <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
         <hasInteractionCell>False</hasInteractionCell>
