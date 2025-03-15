@@ -1,7 +1,7 @@
 /*
  * This file is part of Dematerializer, a Better Rimworlds Project.
  *
- * Copyright © 2024 Theodore R. Smith
+ * Copyright © 2024-2025 Theodore R. Smith
  * Author: Theodore R. Smith <hopeseekr@gmail.com>
  *   GPG Fingerprint: D8EA 6E4D 5952 159D 7759  2BB4 EEB6 CE72 F441 EC41
  *   https://github.com/BetterRimworlds/Dematerializer
@@ -14,25 +14,24 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace BetterRimworlds.Dematerializer
+namespace BetterRimworlds.Dematerializer;
+
+public class ITab_DematerializerBuffer : ITab_ContentsBase
 {
-    public class ITab_DematerializerBuffer : ITab_ContentsBase
+    public override IList<Thing> container
     {
-        public override IList<Thing> container
+        get
         {
-            get
-            {
-                var stargate = base.SelThing as Building_Dematerializer;
+            var stargate = base.SelThing as Building_Dematerializer;
 
-                return stargate.GetDirectlyHeldThings();
-            }
+            return stargate.GetDirectlyHeldThings();
         }
+    }
 
-        public ITab_DematerializerBuffer()
-        {
-            labelKey = "TabCasketContents";
-            containedItemsKey = "ContainedItems";
-            canRemoveThings = false;
-        }
+    public ITab_DematerializerBuffer()
+    {
+        labelKey = "TabCasketContents";
+        containedItemsKey = "ContainedItems";
+        canRemoveThings = false;
     }
 }
