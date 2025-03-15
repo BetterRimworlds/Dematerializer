@@ -10,11 +10,17 @@
     </supportedVersions>
     <author>HopeSeekr</author>
     <url>https://github.com/BetterRimworlds/Dematerializer/</url>
-    <description>Version 6
+    <description>Version 1.1.0
 The BetterRimworlds Dematerializer enables you to dematerialize materials and pawns (both friendly and hostile!) from
 anywhere on the map into a temporary subspace bubble that will persist as long as their is a persistent flow of energy
 to the subspace capacitors.
 
 **ALERT: The Dematerializer has *harsh* consequences for all higher lifeforms on the map in the case of power failure!**
+
+Latest Changes:
+* **[2025-03-15 11:45:05 CDT]** Fixed incompatibility with other mods.
+* **[2025-03-15 11:46:50 CDT]** Added support for Rimworld v1.5.
+* **[2025-03-15 12:14:12 CDT]** Misc. fixes.
+* **[2025-03-15 12:18:30 CDT]** Ported to .NET v9.0 and C# v10.0.
     </description>
 </ModMetaData>

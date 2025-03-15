@@ -16,6 +16,12 @@ When solar storms occur, the Dematerializer is fully powered by the solar wind.
 **v1.0.0: 2024-03-09**
 * Initial Release
 
+**v1.1.0: 2025-03-15**
+* **[2025-03-15 11:45:05 CDT]** Fixed incompatibility with other mods.
+* **[2025-03-15 11:46:50 CDT]** Added support for Rimworld v1.5.
+* **[2025-03-15 12:14:12 CDT]** Misc. fixes.
+* **[2025-03-15 12:18:30 CDT]** Ported to .NET v9.0 and C# v10.0.
+
 ## Better Rimworlds Stargate Mods
 
 1. [**Stargate**](https://github.com/BetterRimworlds/Stargate) — Send Pawns and Items to other Savegames on the same computer.
