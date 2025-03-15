@@ -62,14 +62,13 @@ namespace BetterRimworlds.Dematerializer
             UI_POWER_UP = ContentFinder<Texture2D>.Get("UI/PowerUp", true);
             UI_POWER_DOWN = ContentFinder<Texture2D>.Get("UI/PowerDown", true);
 
-#if RIMWORLD12
+        #if RIMWORLD12
             GraphicRequest requestActive = new GraphicRequest(Type.GetType("Graphic_Single"), "Things/Buildings/Dematerializer-Active",   ShaderDatabase.DefaultShader, new Vector2(3, 3), Color.white, Color.white, new GraphicData(), 0, null);
             GraphicRequest requestInactive = new GraphicRequest(Type.GetType("Graphic_Single"), "Things/Buildings/Dematerializer", ShaderDatabase.DefaultShader, new Vector2(3, 3), Color.white, Color.white, new GraphicData(), 0, null);
-#endif
-#if RIMWORLD13 || RIMWORLD14
+        #else
             GraphicRequest requestActive = new GraphicRequest(Type.GetType("Graphic_Single"), "Things/Buildings/Dematerializer-Active",   ShaderDatabase.DefaultShader, new Vector2(3, 3), Color.white, Color.white, new GraphicData(), 0, null, null);
             GraphicRequest requestInactive = new GraphicRequest(Type.GetType("Graphic_Single"), "Things/Buildings/Dematerializer", ShaderDatabase.DefaultShader, new Vector2(3, 3), Color.white, Color.white, new GraphicData(), 0, null, null);
-#endif
+        #endif
 
             graphicActive = new Graphic_Single();
             graphicActive.Init(requestActive);
@@ -96,7 +95,7 @@ namespace BetterRimworlds.Dematerializer
             }
 
             this.teleportArea = (Area_Allowed) foundTeleportArea;
-            
+
             base.SpawnSetup(map, respawningAfterLoad);
             // this.dematerializedBuffer.Init();
         }
@@ -139,6 +138,18 @@ namespace BetterRimworlds.Dematerializer
             base.TickRare();
         }
 
+        private bool detectSolarFlare()
+        {
+            var solarFlareDef = DefDatabase<GameConditionDef>.GetNamed("SolarFlare");
+            bool isSolarFlare = this.currentMap.gameConditionManager.ConditionIsActive(solarFlareDef);
+
+            // if (isSolarFlare)
+            // {
+            //     Log.Error("A solar flare is occuring...");
+            // }
+
+            return isSolarFlare;
+        }
         public override void TickRare()
         {
             var foundTeleportArea = Find.CurrentMap.areaManager.GetLabeled("Teleport Field");
@@ -194,8 +205,7 @@ namespace BetterRimworlds.Dematerializer
                     // }
 
                     // Ignore power requirements during a solar flare.
-                    bool isSolarFlare = this.currentMap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
-                    if (isSolarFlare)
+                    if (this.detectSolarFlare() == true)
                     {
                         return;
                     }
@@ -215,7 +225,7 @@ namespace BetterRimworlds.Dematerializer
                 // There is no gate address yet. Abort.
                 this.AddResources();
             }
-            
+
             base.TickRare();
         }
 
@@ -280,7 +290,7 @@ namespace BetterRimworlds.Dematerializer
             }
 
             List<Thing> foundThings = BetterRimworlds.Utilities.FindItemThingsNearBuilding(this, Building_Dematerializer.ADDITION_DISTANCE, this.currentMap);
- 
+
             foreach (Thing foundThing in foundThings)
             {
                 this.dematerializedBuffer.TryAdd(foundThing);
@@ -323,7 +333,11 @@ namespace BetterRimworlds.Dematerializer
                     }
 
                     // Tell the MapDrawer that here is something thats changed
+                    #if RIMWORLD12 || RIMWORLD13 || RIMWORLD14
                     Find.CurrentMap.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things, true, false);
+                    #else
+                    Find.CurrentMap.mapDrawer.MapMeshDirty(Position, MapMeshFlagDefOf.Things, true, false);
+                    #endif
 
                     this.teleportArea.Delete();
                     this.teleportArea = new Area_Allowed(this.currentMap.areaManager, "Teleport Field");
@@ -345,13 +359,13 @@ namespace BetterRimworlds.Dematerializer
             /* Tuple<int, List<Thing>> **/
             var recallData = this.dematerializedBuffer.ToList();
             this.dematerializedBuffer.Clear();
- 
+
             if (recallData.Count == 0)
             {
                 Messages.Message("WARNING: The Stargate buffer was empty!!", MessageTypeDefOf.ThreatBig);
                 return false;
             }
-            
+
             bool wasPlaced;
             foreach (Thing currentThing in recallData)
             {
@@ -382,7 +396,12 @@ namespace BetterRimworlds.Dematerializer
             recallData.Clear();
 
             // Tell the MapDrawer that here is something that's changed
+            #if RIMWORLD12 || RIMWORLD13 || RIMWORLD14
             Find.CurrentMap.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things, true, false);
+            #else
+            Find.CurrentMap.mapDrawer.MapMeshDirty(Position, MapMeshFlagDefOf.Things, true, false);
+            #endif
+
 
             return !this.dematerializedBuffer.Any();
         }
@@ -393,7 +412,7 @@ namespace BetterRimworlds.Dematerializer
         }
 
         #endregion
-        
+
         public override Graphic Graphic
         {
             get
